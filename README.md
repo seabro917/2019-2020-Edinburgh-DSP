@@ -10,11 +10,11 @@ This assignment is about writing the `resample` function manually, which is used
 This is established with the idea of *Interpolation* and *Decimication*, e.g., if we have a signal originally sampled at `5kHz` ($F_x$) , our target is to resample it to `8kHz` ($F_y$), we first find the least common multiple `(40kHz)` of these two frequencies, upsampling the signal to this frequency via interpolation in time domain, then downsample the resulting signal to the target frequency via decimation. The upsampling and downsampling factors are denoted by $I$ and $D$, standing for interpolation and decimation, respectively.
 
 ### Several points
-- For Interpolation: When we do the upsampling (interpolation process), the resulting signal's spectrum is a ***repetitive compressed*** version of the original signal (value of `I` will decide how many copies we have in the frequency domain). Before performing the decimation, we only want the specturm which contains frequency content of our orginal signal within its Nyquist rate, thus, filtering is needed.
+- For Interpolation: When we do the upsampling (interpolation process), the resulting signal's spectrum is a ***repetitive compressed*** version of the original signal (value of `I` will decide how many copies we have in the frequency domain). Before performing the decimation, we only want the spectrum which contains the frequency content of our original signal within its Nyquist rate, thus, filtering is needed.
 
-- For Decimation: Assume we want to resample the original signal to a higher sampling frequency, then we must pay attention to the ***aliasing*** issues when doing the decimation (recall the Nyquist theorem). Therefore, apart from the filter described above after the interpolatiom process, before performing decimation, we need another filter to filter out any frequency content beyond half of the target sampling frequency ($F_y/2$).
+- For Decimation: Assume we want to resample the original signal to a higher sampling frequency, then we must pay attention to the ***aliasing*** issues when doing the decimation (recall the Nyquist theorem). Therefore, apart from the filter described above after the interpolation process, before performing decimation, we need another filter to filter out any frequency content beyond half of the target sampling frequency ($F_y/2$).
 
-- In real implmentation, these two filters can be combined to a single anti-aliasing filte, whose frequency response is:
+- In real implementation, these two filters can be combined to a single anti-aliasing filter, whose frequency response is:
 
 $$H(w_v) = \begin{cases} 
                1 & 0 \leq \|w_v| \leq min(\pi/D, \pi/I) \\
@@ -24,11 +24,11 @@ $$H(w_v) = \begin{cases}
 While decimation is always **lossy**, interpolation is **not**.
 
 <p align="center">
-<img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/task_1.png" width = "420"/> <img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/task_2.png" width = "420"/>
+<img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/task_1.png" width = "400"/> <img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/task_2.png" width = "400"/>
 </p>
  
 <p align="center">
- <sub>*From top to bottom, left to right: Fig. 1 to Fig. 3 (for Task 1, resampling from 5kHz to 8kHz), Fig. 4 to Fig. 6 (for Task 2, resampling the convoluation result of two signals).</sub> 
+ <sub>*From top to bottom, left to right: Fig. 1 to Fig. 3 (for Task 1, resampling from 5kHz to 8kHz), Fig. 4 to Fig. 6 (for Task 2, resampling the convolution result of two signals).</sub> 
 </p>
 
 <p align="center">
@@ -41,19 +41,19 @@ While decimation is always **lossy**, interpolation is **not**.
 </p>
 
 ## Assignment 2
-This assignmen is about designing encoder and decoder for digital image compression and reconstruction.
-### Basic pixel based source coder - Encoding the pixel
-Directly quantizing, encoding (using Huffman scheme) and transmitting the value of each pixel, without any other modifications. Information about the original image, such as image size etc is stored in the header and transmitted together for receiver side reconstruction purpose.
+This assignment is about designing encoder and decoder for digital image compression and reconstruction.
+### Basic pixel-based source coder - Encoding the pixel
+Directly quantizing, encoding (using the Huffman scheme) and transmitting the value of each pixel, without any other modifications. Information about the original image, such as image size, etc is stored in the header and transmitted together for receiver side reconstruction purpose.
 ### Mean and difference source coder - Encoding the "difference"
-Apply a mean filer (sliding window) to each block of the original image, substract the calculated mean from each pixel value within this block. Instead of transmitting the value of each pixel, we transmit the difference between pixel value and calculated mean. Again, Huffman encoding is also applied before transmitting. Calculated mean for each block is also stored in the header for later reconstruction purpose.
+Apply a mean filer (sliding window) to each block of the original image, substract the calculated mean from each pixel value within this block. Instead of transmitting the value of each pixel, we transmit the difference between pixel value and the calculated mean. Again, Huffman encoding is also applied before transmitting. Calculated mean for each block is also stored in the header for later reconstruction purpose.
 ### JPEG lite source coder - Encoding the DCT coefficients of the "difference"
-After calculating the "difference image" as shown above, here we apply the DCT ([discrete consine transform](https://en.wikipedia.org/wiki/Discrete_cosine_transform)) to the difference image, and encoding the resulting DCT coefficients with Huffman coding.
+After calculating the "difference image" as shown above, here we apply the DCT ([discrete cosine transform](https://en.wikipedia.org/wiki/Discrete_cosine_transform)) to the difference image, and encoding the resulting DCT coefficients with Huffman coding.
 ### Result
 <p align="center">
 <img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/comparison.png" width = "820"/>
 </p>
 <p align="center">
- <sub>Fig. 7: (a): Original image. (b): Reconstructed image by pixel based method. (c): Reconstructed image by mean and difference image. (d): Reconstructed image by mean image and DCT of difference image.</sub>
+ <sub>Fig. 7: (a): Original image. (b): Reconstructed image by pixel-based method. (c): Reconstructed image by mean and difference image. (d): Reconstructed image by mean image and DCT of difference image.</sub>
 </p>
 
 
@@ -69,7 +69,7 @@ After calculating the "difference image" as shown above, here we apply the DCT (
 <sub>Table. 1: Summary of compression ratio and PSNR performance of three methods on different samples images.</sub>
 </p>
  
-### Some flowchats
+### Some flowcharts
 <p align="center">
 <img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/flowchart_diff_encoder.png" width = "420"/> <img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/flowchart_lite_jpeg_encoder.png" width = "400"/>
 <p/>
