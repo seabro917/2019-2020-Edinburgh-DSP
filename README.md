@@ -53,7 +53,7 @@ After calculating the "difference image" as shown above, here we apply the DCT (
 <img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/comparison.png" width = "820"/>
 </p>
 <p align="center">
- <sub>Fig. 7: (a): Original image. (b): Reconstructed image by pixel-based method. (c): Reconstructed image by mean and difference image. (d): Reconstructed image by mean image and DCT of difference image.</sub>
+ <sub>Fig. 7: (a): Original image. (b): Reconstructed image by the pixel-based method. (c): Reconstructed image by mean and difference image. (d): Reconstructed image by mean image and DCT of the difference image.</sub>
 </p>
 
 
@@ -66,8 +66,10 @@ After calculating the "difference image" as shown above, here we apply the DCT (
 
  
 <p align="center">
-<sub>Table. 1: Summary of compression ratio and PSNR performance of three methods on different samples images.</sub>
+<sub>Table. 1: Summary of compression ratio and PSNR performance of three methods on different sample images.</sub>
 </p>
+
+> **Note**: since Huffman coding is a lossless coding scheme, the PSNR for pixel encoder is infinity. 
  
 ### Some flowcharts
 <p align="center">
