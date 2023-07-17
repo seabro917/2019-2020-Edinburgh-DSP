@@ -24,7 +24,7 @@ $$H(w_v) = \begin{cases}
 While decimation is always **lossy**, interpolation is **not**.
 
 <p align="center">
-<img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/task_1.png" width = "400"/> <img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/task_2.png" width = "400"/>
+<img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/Figs/Assignment_1/task_1.png" width = "400"/> <img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/Figs/Assignment_1/task_2.png" width = "400"/>
 </p>
  
 <p align="center">
@@ -50,7 +50,7 @@ Apply a mean filer (sliding window) to each block of the original image, substra
 After calculating the "difference image" as shown above, here we apply the DCT ([discrete cosine transform](https://en.wikipedia.org/wiki/Discrete_cosine_transform)) to the difference image, and encoding the resulting DCT coefficients with Huffman coding.
 ### Result
 <p align="center">
-<img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/comparison.png" width = "820"/>
+<img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/Figs/Assignment_2/comparison.png" width = "820"/>
 </p>
 <p align="center">
  <sub>Fig. 7: (a): Original image. (b): Reconstructed image by the pixel-based method. (c): Reconstructed image by mean and difference image. (d): Reconstructed image by mean image and DCT of the difference image.</sub>
@@ -73,7 +73,7 @@ After calculating the "difference image" as shown above, here we apply the DCT (
  
 ### Some flowcharts
 <p align="center">
-<img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/flowchart_diff_encoder.png" width = "420"/> <img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/flowchart_lite_jpeg_encoder.png" width = "400"/>
+<img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/Figs/Assignment_2/flowchart_diff_encoder.png" width = "420"/> <img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/Figs/Assignment_2/flowchart_lite_jpeg_encoder.png" width = "400"/>
 <p/>
 <p align="center">
  <sub>Fig. 8: Flowcharts for the designed difference encoder (left) and lite JPEG encoder (right)</sub>
