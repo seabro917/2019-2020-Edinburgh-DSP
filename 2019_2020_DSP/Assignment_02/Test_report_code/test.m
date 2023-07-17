@@ -1,0 +1,40 @@
+clear all;
+close all;
+clc;
+% img_original = imread('cameraman.jpg');
+img_original = imread('spine.jpg');
+% img_original = imread('lighhouse.png');
+% img_original = imread('peppers.png');
+figure(2);
+subplot(1,4,1);
+imshow(img_original);
+title('Original Image');
+xlabel('(a)');
+hold on;
+% Recovered by method from task 1.
+[zipped, info] = pixel_coder(img_original);
+img_recovered_piexl = pixel_decoder(zipped, info);
+subplot(1,4,2);
+imshow(img_recovered_piexl);
+psnr_piexl = psnr(img_recovered_piexl, img_original);
+str = ['Recovered by piexl ', newline, 'PSNR: ', num2str(psnr_piexl)];
+title(str);
+xlabel('(b)');
+% Recovered by method from task 2.
+[zipped, info] = diff_coder(img_original);
+img_recovered_by_diff = diff_decoder(zipped, info);
+subplot(1,4,3);
+imshow(img_recovered_by_diff);
+psnr_diff = psnr(img_recovered_by_diff, img_original);
+str = ['Recovered by mean and diff ', newline,  'PSNR: ', num2str(psnr_diff)];
+title(str);
+xlabel('(c)');
+% Recovered by method from task 3.
+[zipped, info] = jpeg_lite(img_original);
+img_recovered_by_dct_diff = jpeg_lite_decoder(zipped, info);
+subplot(1,4,4);
+imshow(img_recovered_by_dct_diff);
+psnr_dct_diff = psnr(img_recovered_by_dct_diff, img_original);
+str = ['Recovered by mean and DCT of diff ', newline, 'PSNR: ', num2str(psnr_dct_diff)];
+title(str);
+xlabel('(d)');
