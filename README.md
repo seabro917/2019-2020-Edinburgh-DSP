@@ -69,7 +69,7 @@ After calculating the "difference image" as shown above, here we apply the DCT (
 <sub>Table. 1: Summary of compression ratio and PSNR performance of three methods on different sample images.</sub>
 </p>
 
-> **Note**: since Huffman coding is a lossless coding scheme, the PSNR for pixel encoder is infinity. 
+> **Note**: since Huffman coding is a lossless coding scheme, the PSNR for pixel encoder is infinity since no other additional computations are taken. 
  
 ### Some flowcharts
 <p align="center">
