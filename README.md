@@ -84,4 +84,4 @@ After calculating the "difference image" as shown above, here we apply the DCT (
 
 
 # Labs
-Solutions to each lab session's task. Topics are mainly about 1D 2D convolution, LTI system process, digital image processing, power spectrum estimation methods, etc.
+Solutions to each lab session's task. Topics mainly cover 1D 2D convolution, LTI system process, digital image processing, power spectrum estimation methods, etc.
