@@ -1,5 +1,5 @@
 # 2019-2020-Edinburgh-DSP
-My designs and solutions for M.Sc. DSP course assignments & labs.
+My designs and solutions for M.Sc. DSP (Digital Signal Processing) course assignments & labs.
 
 Please note that same assignments are not included in this course syllabus currently.
 # Assignmens
