@@ -73,7 +73,7 @@ After calculating the "difference image" as shown above, here we apply the DCT (
  
 ### Some flowcharts
 <p align="center">
-<img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/Figs/Assignment_2/flowchart_diff_encoder.png" width = "720"/> 
+<img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/Figs/Assignment_2/flowchart_diff_encoder.png" width = "700"/> 
   
 <img src = "https://github.com/seabro917/2019-2020-Edinburgh-DSP/blob/main/Figs/Assignment_2/flowchart_lite_jpeg_encoder.png" width = "700"/>
 <p/>
