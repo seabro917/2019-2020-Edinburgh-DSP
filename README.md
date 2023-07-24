@@ -7,7 +7,7 @@ Please note that same assignments are not included in this course syllabus curre
 This assignment is about writing the `resample` function manually, which is used for resampling the given signal at a specific sampling frequency.
 
 ### Basic design idea
-This is established with the idea of *Interpolation* and *Decimication*, e.g., if we have a signal originally sampled at `5kHz` ($F_x$) , our target is to resample it to `8kHz` ($F_y$), we first find the least common multiple `(40kHz)` of these two frequencies, upsampling the signal to this frequency via interpolation in time domain, then downsample the resulting signal to the target frequency via decimation. The upsampling and downsampling factors are denoted by $I$ and $D$, standing for interpolation and decimation, respectively.
+This is established with the idea of *Interpolation* and *Decimication*, e.g., if we have a signal originally sampled at `5kHz` ($F_x$), our target is to resample it to `8kHz` ($F_y$), we first find the least common multiple `(40kHz)` of these two frequencies, upsampling the signal to this frequency via interpolation in the time domain, then downsample the resulting signal to the target frequency via decimation. The upsampling and downsampling factors are denoted by $I$ and $D$, standing for interpolation and decimation, respectively.
 
 ### Several points
 - For Interpolation: When we do the upsampling (interpolation process), the resulting signal's spectrum is a ***repetitive compressed*** version of the original signal (value of $I$ will decide how many copies we have in the frequency domain). Before performing the decimation, we only want the spectrum which contains the frequency content of our original signal within its Nyquist rate, thus, filtering is needed.
